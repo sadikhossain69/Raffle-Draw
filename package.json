@@ -4,7 +4,9 @@
   "description": "A simple raffle draw REST API Project build using nodejs and expressjs. This project is best for beginners who have just started learning express and API development.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +22,8 @@
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "colors": "^1.4.0"
   }
 }
