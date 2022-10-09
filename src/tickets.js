@@ -75,6 +75,27 @@ class TicketCollection {
         return ticket
     }
 
+    /**
+     * delete by id
+     * @param {string} ticketId 
+     * @retun {boolean}
+     */
+    deleteById(ticketId) {
+        const index = this[tickets].findIndex(
+            /**
+             * @param {Ticket} ticket
+             */
+            (ticket) => ticket.id === ticketId
+        )
+
+        if(index === -1) {
+            return false
+        } else {
+            this[tickets].splice(index, 1)
+            return true
+        }
+    }
+
 }
 
 const collection = new TicketCollection()
