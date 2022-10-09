@@ -20,6 +20,14 @@ class TicketCollection {
         return tickets
     }
 
+    /**
+     * It returns the value of the tickets property of the object that the function is a method of.
+     * @returns The tickets array.
+     */
+    find() {
+        return this[tickets]
+    }
+
 }
 
 const collection = new TicketCollection()
