@@ -8,6 +8,10 @@ const app = express()
 // Middleware
 app.use([morgan('dev'), cors(), express.json()])
 
+app.get('/health', (req, res) => {
+    res.status(400).json({message: 'success'})
+})
+
 // Port
 const port = process.env.PORT || 5000
 
