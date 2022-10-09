@@ -28,6 +28,74 @@ class TicketCollection {
         return this[tickets]
     }
 
+    /**
+     * It returns the ticket with the given id
+     * @param id - The id of the ticket you want to find
+     * @returns The ticket object with the matching id.
+     */
+    findById(id) {
+        const ticket = this[tickets].find(
+            /**
+             * @param {Ticket} ticket
+             */
+            (ticket) => ticket.id === id
+        )
+
+        return ticket
+    }
+
+
+    /**
+     * It returns an array of tickets that match the username passed in.
+     * @param username - The username of the user to find tickets for.
+     * @returns An array of tickets.
+     */
+    findByUsername(username) {
+        const tickets = this[tickets].filter(
+            /**
+             * @param {Ticket} ticket
+             */
+            (ticket) => ticket.username === username
+        )
+
+        return tickets
+    }
+
+    /**
+     * update by Id
+     * @param {string} ticketId 
+     * @param {{username: string, price: number}} ticketBody 
+     */
+    updateById(ticketId, ticketBody) {
+        const ticket = this.findById(ticketId)
+
+        ticket.username = ticketBody.username ?? ticket.username
+        ticket.price = ticketBody.price ?? ticket.price
+
+        return ticket
+    }
+
+    /**
+     * delete by id
+     * @param {string} ticketId 
+     * @retun {boolean}
+     */
+    deleteById(ticketId) {
+        const index = this[tickets].findIndex(
+            /**
+             * @param {Ticket} ticket
+             */
+            (ticket) => ticket.id === ticketId
+        )
+
+        if(index === -1) {
+            return false
+        } else {
+            this[tickets].splice(index, 1)
+            return true
+        }
+    }
+
 }
 
 const collection = new TicketCollection()
