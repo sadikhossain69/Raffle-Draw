@@ -1,0 +1,19 @@
+{
+  "name": "raffle-draw",
+  "version": "1.0.0",
+  "description": "A simple raffle draw REST API Project build using nodejs and expressjs. This project is best for beginners who have just started learning express and API development.",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sadikhossain69/Raffle-Draw.git"
+  },
+  "author": "Dev Sadik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sadikhossain69/Raffle-Draw/issues"
+  },
+  "homepage": "https://github.com/sadikhossain69/Raffle-Draw#readme"
+}
