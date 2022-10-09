@@ -33,7 +33,7 @@ class TicketCollection {
      * @param id - The id of the ticket you want to find
      * @returns The ticket object with the matching id.
      */
-    findTicketById(id) {
+    findById(id) {
         const ticket = this[tickets].find(
             /**
              * @param {Ticket} ticket
@@ -50,7 +50,7 @@ class TicketCollection {
      * @param username - The username of the user to find tickets for.
      * @returns An array of tickets.
      */
-    findTicketByUsername(username) {
+    findByUsername(username) {
         const tickets = this[tickets].filter(
             /**
              * @param {Ticket} ticket
@@ -59,6 +59,20 @@ class TicketCollection {
         )
 
         return tickets
+    }
+
+    /**
+     * update by Id
+     * @param {string} ticketId 
+     * @param {{username: string, price: number}} ticketBody 
+     */
+    updateById(ticketId, ticketBody) {
+        const ticket = this.findById(ticketId)
+
+        ticket.username = ticketBody.username ?? ticket.username
+        ticket.price = ticketBody.price ?? ticket.price
+
+        return ticket
     }
 
 }
