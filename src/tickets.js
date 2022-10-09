@@ -28,6 +28,22 @@ class TicketCollection {
         return this[tickets]
     }
 
+    /**
+     * It returns the ticket with the given id
+     * @param id - The id of the ticket you want to find
+     * @returns The ticket object with the matching id.
+     */
+    findTicketById(id) {
+        const ticket =  this[tickets].find(
+            /**
+             * @param {Ticket} ticket
+             */
+            (ticket) => ticket.id === id
+        )
+
+        return ticket
+    }
+
 }
 
 const collection = new TicketCollection()
