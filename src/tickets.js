@@ -99,3 +99,4 @@ class TicketCollection {
 }
 
 const collection = new TicketCollection()
+
